@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en-NZ"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0A0A0B">
+<title>Brush Painting Co., Premium house painting done properly</title>
+<meta name="description" content="Brush Painting Co. Premium interior and exterior house painting across New Zealand. Straight answers, immaculate finish.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=' js';</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0A0A0B; --panel:#111013; --card:#161418; --line:rgba(255,255,255,.10);
+  --paper:#F4F1EC; --mut:#8B8792; --dim:#C9C6CE;
+  --brush:#9B7BE0; --brush-d:#7C5CBF;
+  --dsp:'Archivo',Impact,sans-serif; --serif:'Fraunces',Georgia,serif;
+  --body:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--ink);color:var(--paper);-webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;overflow-x:hidden;line-height:1.6;
+  background-image:radial-gradient(1200px 600px at 80% -5%,rgba(124,92,191,.10),transparent 60%)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1280px;margin:0 auto;padding-inline:clamp(20px,4.5vw,64px)}
+.lab{font-size:10.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--mut)}
+.lab.p{color:var(--brush)}
+::selection{background:var(--brush);color:#0A0A0B}
+
+/* entrance */
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.js .rz{opacity:0}
+.js .in{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.js .inf{animation:fade 1.1s ease both}
+
+/* ── wordmark ── */
+.brush{font-family:var(--dsp);font-weight:800;letter-spacing:-.01em;text-transform:uppercase;font-size:19px}
+.brush b{color:var(--brush)}
+
+/* ── header ── */
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s ease,border-color .4s ease;
+  border-bottom:1px solid transparent}
+header.stuck{background:rgba(10,10,11,.72);backdrop-filter:blur(18px);border-bottom-color:var(--line)}
+.hb{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0}
+.nav{display:flex;gap:34px}
+.nav a{font-size:13px;font-weight:500;letter-spacing:.02em;color:var(--dim);transition:color .2s}
+.nav a:hover{color:#fff}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--brush);color:#0A0A0B;
+  font-weight:700;font-size:13.5px;letter-spacing:.02em;padding:13px 22px;border-radius:100px;
+  transition:transform .25s ease,box-shadow .25s ease;box-shadow:0 10px 30px -12px rgba(155,123,224,.7)}
+.cta:hover{transform:translateY(-2px);box-shadow:0 16px 38px -12px rgba(155,123,224,.85)}
+.cta svg{width:14px;height:14px}
+
+/* ── hero ── */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.5;animation:slow 24s ease-in-out infinite alternate}
+@keyframes slow{from{transform:scale(1.06)}to{transform:scale(1.16)}}
+.hero-bg:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,var(--ink) 8%,rgba(10,10,11,.5) 52%,rgba(10,10,11,.2) 100%),
+             linear-gradient(0deg,var(--ink),transparent 46%)}
+.hero .wrap{position:relative;z-index:2;padding-top:110px;padding-bottom:60px}
+.hero .lab{margin-bottom:26px}
+.hero h1{font-family:var(--dsp);font-weight:900;text-transform:uppercase;letter-spacing:-.035em;
+  font-size:clamp(52px,10vw,140px);line-height:.9;margin-bottom:8px}
+.hero h1 .em{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:none;
+  letter-spacing:-.01em;color:var(--brush);display:block;font-size:clamp(30px,5.4vw,76px);line-height:1;margin-top:12px}
+.hero p{color:var(--dim);font-size:clamp(16px,1.8vw,20px);max-width:42ch;margin:30px 0 38px;line-height:1.6}
+.hero .row{display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px}
+.ghost{display:inline-flex;align-items:center;gap:11px;font-weight:600;font-size:14.5px;color:#fff;
+  border-bottom:1px solid var(--brush);padding-bottom:3px;transition:gap .25s}
+.ghost:hover{gap:16px}
+.scroll{position:absolute;left:0;right:0;bottom:26px;z-index:2;text-align:center;color:var(--mut);font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+
+/* ── marquee strip ── */
+.strip{border-block:1px solid var(--line);background:var(--panel);overflow:hidden;padding:20px 0}
+.mq{display:flex;gap:56px;white-space:nowrap;animation:mv 34s linear infinite;font-family:var(--serif);
+  font-style:italic;font-size:clamp(18px,2.4vw,26px);color:var(--dim)}
+.mq span{display:inline-flex;align-items:center;gap:56px}
+.mq b{color:var(--brush);font-family:var(--dsp);font-style:normal;font-weight:700}
+@keyframes mv{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── sections ── */
+section{position:relative}
+.pad{padding:clamp(84px,12vw,180px) 0}
+.ey{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.ey .ln{height:1px;width:54px;background:var(--brush);transform-origin:left}
+.js .ey .ln{animation:grow .8s cubic-bezier(.2,.7,.2,1) both}
+h2{font-family:var(--dsp);font-weight:800;text-transform:uppercase;letter-spacing:-.03em;
+  font-size:clamp(34px,5.6vw,72px);line-height:.98}
+h2 .it{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:none;color:var(--brush);letter-spacing:-.01em}
+.lede{color:var(--dim);font-size:clamp(16px,1.7vw,19px);max-width:52ch;margin-top:22px;line-height:1.65}
+
+/* work grid */
+.work{background:var(--panel);border-block:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,1.6vw,22px);margin-top:clamp(40px,5vw,64px)}
+.f{position:relative;overflow:hidden;border-radius:6px;background:var(--card)}
+.f img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1);filter:contrast(1.03)}
+.f:hover img{transform:scale(1.05)}
+.f .cap{position:absolute;left:0;bottom:0;right:0;padding:22px;z-index:2;
+  background:linear-gradient(0deg,rgba(10,10,11,.9),transparent)}
+.f .cap .t{font-family:var(--dsp);font-weight:700;text-transform:uppercase;letter-spacing:-.01em;font-size:17px}
+.a{grid-column:span 7;aspect-ratio:16/11}
+.b{grid-column:span 5;aspect-ratio:4/5}
+.c{grid-column:span 4;aspect-ratio:1/1}
+.d{grid-column:span 4;aspect-ratio:1/1}
+.e{grid-column:span 4;aspect-ratio:1/1}
+
+/* the '5 questions', their own brilliant content, elevated */
+.q .wrap{max-width:1000px}
+.qhead{max-width:60ch;margin-bottom:clamp(48px,6vw,80px)}
+.qrow{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,56px);align-items:start;
+  padding:clamp(30px,3.6vw,48px) 0;border-top:1px solid var(--line)}
+.qrow:last-child{border-bottom:1px solid var(--line)}
+.qn{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3vw,40px);color:var(--brush);line-height:1}
+.qrow h3{font-family:var(--dsp);font-weight:700;text-transform:uppercase;letter-spacing:-.02em;
+  font-size:clamp(21px,2.8vw,33px);line-height:1.05;margin-bottom:14px}
+.qrow p{color:var(--mut);font-size:15.5px;max-width:60ch;line-height:1.6}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:clamp(40px,5vw,60px)}
+.stat{background:var(--ink);padding:clamp(28px,3.4vw,44px)}
+.stat .v{font-family:var(--dsp);font-weight:800;font-size:clamp(36px,4.6vw,58px);letter-spacing:-.03em;line-height:1}
+.stat .v em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--brush)}
+.stat .k{color:var(--mut);font-size:12.5px;letter-spacing:.06em;margin-top:12px}
+
+/* process */
+.proc{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(16px,2vw,26px);margin-top:clamp(40px,5vw,64px)}
+.step{border:1px solid var(--line);border-radius:8px;padding:clamp(26px,2.6vw,36px);background:var(--card);
+  transition:border-color .3s,transform .3s}
+.step:hover{border-color:var(--brush-d);transform:translateY(-4px)}
+.step .n{font-family:var(--serif);font-style:italic;color:var(--brush);font-size:22px;margin-bottom:20px}
+.step h4{font-family:var(--dsp);font-weight:700;text-transform:uppercase;letter-spacing:-.01em;font-size:18px;margin-bottom:10px}
+.step p{color:var(--mut);font-size:14.5px;line-height:1.55}
+
+/* contact / close */
+.close{background:linear-gradient(180deg,var(--panel),var(--ink));border-top:1px solid var(--line);text-align:center}
+.close h2{margin-bottom:22px}
+.close .lede{margin:0 auto 44px}
+.dial{font-family:var(--dsp);font-weight:900;font-size:clamp(38px,6vw,84px);letter-spacing:-.03em;
+  display:inline-block;margin-bottom:10px;background:linear-gradient(90deg,#fff,var(--brush));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.cinfo{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 40px;margin-top:34px;color:var(--dim);font-size:15px}
+.cinfo a{border-bottom:1px solid var(--brush);padding-bottom:2px}
+.cinfo b{color:var(--mut);font-weight:600;letter-spacing:.04em;margin-right:8px}
+
+footer{background:var(--ink);border-top:1px solid var(--line);padding:34px 0}
+.fb{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px}
+.fb .sm{color:var(--mut);font-size:12px;letter-spacing:.04em}
+
+/* mobile */
+@media(max-width:860px){
+  .nav{display:none}
+  .a,.b,.c,.d,.e{grid-column:span 12}
+  .a,.b{aspect-ratio:4/3}
+  .qrow{grid-template-columns:1fr;gap:10px}
+  .qn{font-size:22px}
+  .hero{min-height:92vh}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rz{opacity:1}}
+</style></head><body>
+
+<header id="hd"><div class="wrap hb">
+  <div class="brush">Brush<b>.</b></div>
+  <nav class="nav">
+    <a href="#work">Work</a><a href="#questions">Before you hire</a><a href="#process">Process</a><a href="#contact">Contact</a>
+  </nav>
+  <a class="cta" href="tel:0272155818">Get a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div></header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg inf"><img id="himg" alt="Immaculate interior paintwork"></div>
+  <div class="wrap">
+    <div class="lab p rz in" style="animation-delay:.1s">Brush Painting Co. · New Zealand</div>
+    <h1 class="rz in" style="animation-delay:.22s">Paint is<span class="em">the finish that lasts.</span></h1>
+    <p class="rz in" style="animation-delay:.5s">Premium interior and exterior house painting for people who notice the details. Straight answers, immaculate lines, and a surface that still looks right in ten years.</p>
+    <div class="row rz in" style="animation-delay:.66s">
+      <a class="cta" href="tel:0272155818">Book your quote</a>
+      <a class="ghost" href="#questions">Read: 5 questions before you hire</a>
+    </div>
+  </div>
+  <div class="scroll inf" style="animation-delay:1.2s">Scroll</div>
+</div>
+
+<!-- MARQUEE -->
+<div class="strip"><div class="mq">
+  <span><b>Interiors</b> immaculate lines <b>Exteriors</b> built for weather <b>Roofs</b> restored <b>Plaster & prep</b> the foundation <b>Colour</b> consulted&nbsp;&nbsp;</span>
+  <span><b>Interiors</b> immaculate lines <b>Exteriors</b> built for weather <b>Roofs</b> restored <b>Plaster & prep</b> the foundation <b>Colour</b> consulted&nbsp;&nbsp;</span>
+</div></div>
+
+<!-- INTRO -->
+<section class="pad"><div class="wrap">
+  <div class="ey rz in"><span class="ln"></span><span class="lab">Who we are</span></div>
+  <h2 class="rz in" style="animation-delay:.1s">Not the cheapest quote.<br><span class="it">The one you don't have to redo.</span></h2>
+  <p class="lede rz in" style="animation-delay:.2s">Anyone can put paint on a wall. The difference is in what you never see: the prep, the primer, the patience between coats. We treat every job like it has our name on it, because it does.</p>
+  <div class="stats rz in" style="animation-delay:.3s">
+    <div class="stat"><div class="v">100<em>%</em></div><div class="k">Prep before a drop of paint</div></div>
+    <div class="stat"><div class="v">2 coats</div><div class="k">Minimum, always</div></div>
+    <div class="stat"><div class="v">7 <em>yr</em></div><div class="k">Workmanship guarantee</div></div>
+    <div class="stat"><div class="v">636</div><div class="k">Following the work on Instagram</div></div>
+  </div>
+</div></section>
+
+<!-- WORK -->
+<section class="work pad" id="work"><div class="wrap">
+  <div class="ey rz in"><span class="ln"></span><span class="lab">Recent work</span></div>
+  <h2 class="rz in" style="animation-delay:.1s">The finish <span class="it">speaks first.</span></h2>
+  <div class="grid">
+    <div class="f rz in a"><img data-p="1" alt="Interior repaint"><div class="cap"><div class="t">Interior repaint · Auckland villa</div></div></div>
+    <div class="f rz in b" style="animation-delay:.08s"><img data-p="2" alt="Exterior weatherboard"><div class="cap"><div class="t">Exterior · weatherboard</div></div></div>
+    <div class="f rz in c" style="animation-delay:.12s"><img data-p="3" alt="Cut-in detail"><div class="cap"><div class="t">Cut-in detail</div></div></div>
+    <div class="f rz in d" style="animation-delay:.16s"><img data-p="4" alt="Feature wall"><div class="cap"><div class="t">Feature wall</div></div></div>
+    <div class="f rz in e" style="animation-delay:.2s"><img data-p="5" alt="Full repaint"><div class="cap"><div class="t">Full repaint</div></div></div>
+  </div>
+</div></section>
+
+<!-- 5 QUESTIONS (their own content) -->
+<section class="q pad" id="questions"><div class="wrap">
+  <div class="qhead">
+    <div class="ey rz in"><span class="ln"></span><span class="lab p">Before you hire anyone</span></div>
+    <h2 class="rz in" style="animation-delay:.1s">5 questions<br><span class="it">most people skip.</span></h2>
+    <p class="lede rz in" style="animation-delay:.2s">Ask any painter these before you sign. A professional answers without hesitation. Everyone else gets vague, and vague is where the shortcuts hide.</p>
+  </div>
+  <div class="qrow rz in"><div class="qn">01</div><div>
+    <h3>What primer will you use on this surface?</h3>
+    <p>Primer is not optional, it is the foundation. The wrong primer on timber, plaster or a repainted surface leads to adhesion failure. A professional names the product for your surface.</p></div></div>
+  <div class="qrow rz in"><div class="qn">02</div><div>
+    <h3>How many coats, and what is the drying time between them?</h3>
+    <p>One thick coat is a shortcut that shows within a year. We do two coats minimum, and we wait the full recoat time. Rushing this is the single most common cause of a job that fails early.</p></div></div>
+  <div class="qrow rz in"><div class="qn">03</div><div>
+    <h3>What preparation is included in the price?</h3>
+    <p>Washing, sanding, filling, caulking, masking. Prep is most of the work and most of the result. If a quote is suspiciously cheap, this is almost always what was left out.</p></div></div>
+  <div class="qrow rz in"><div class="qn">04</div><div>
+    <h3>Who is actually on the tools, and are they insured?</h3>
+    <p>You should know who turns up at your home and that they carry insurance. We tell you exactly who is on your job, start to finish. No mystery subcontractors.</p></div></div>
+  <div class="qrow rz in"><div class="qn">05</div><div>
+    <h3>What happens if something is not right?</h3>
+    <p>A real guarantee is specific and in writing. Ours is seven years on workmanship. If a line is not right, we come back and make it right. That is the whole point of hiring properly.</p></div></div>
+</div></section>
+
+<!-- PROCESS -->
+<section class="pad" id="process"><div class="wrap">
+  <div class="ey rz in"><span class="ln"></span><span class="lab">How it works</span></div>
+  <h2 class="rz in" style="animation-delay:.1s">Simple, <span class="it">from hello to done.</span></h2>
+  <div class="proc">
+    <div class="step rz in"><div class="n">01</div><h4>The walk-through</h4><p>We come and look properly, listen to what you want, and talk through colour and surfaces. No pressure.</p></div>
+    <div class="step rz in" style="animation-delay:.08s"><div class="n">02</div><h4>A clear quote</h4><p>Itemised and honest. You see exactly what prep and how many coats are included, before anything starts.</p></div>
+    <div class="step rz in" style="animation-delay:.16s"><div class="n">03</div><h4>The work</h4><p>Tidy site, protected floors, immaculate cut-ins. We keep you posted and we clean up every day.</p></div>
+    <div class="step rz in" style="animation-delay:.24s"><div class="n">04</div><h4>The walk-out</h4><p>We walk the job with you at the end. Nothing signed off until you are genuinely happy with it.</p></div>
+  </div>
+</div></section>
+
+<!-- CONTACT -->
+<section class="close pad" id="contact"><div class="wrap">
+  <div class="ey rz in" style="justify-content:center"><span class="lab p">Enquiries</span></div>
+  <h2 class="rz in" style="animation-delay:.1s">Let's talk about <span class="it">your place.</span></h2>
+  <p class="lede rz in" style="animation-delay:.2s">Ring for a quote, or send through a couple of photos and we will come back to you fast.</p>
+  <a class="dial rz in" style="animation-delay:.3s" href="tel:0272155818">027 215 5818</a>
+  <div class="cinfo rz in" style="animation-delay:.4s">
+    <span><b>Email</b><a href="mailto:Contact@brushnz.co.nz">Contact@brushnz.co.nz</a></span>
+    <span><b>Instagram</b><a href="https://www.instagram.com/brushnz/" target="_blank" rel="noopener">@brushnz</a></span>
+    <span><b>Area</b>New Zealand</span>
+  </div>
+</div></section>
+
+<footer><div class="wrap fb">
+  <div class="brush">Brush<b>.</b></div>
+  <div class="sm">Brush Painting Co. · Premium house painting · Aotearoa New Zealand</div>
+</div></footer>
+
+<script>
+var hd=document.getElementById('hd');
+addEventListener('scroll',function(){hd.classList.toggle('stuck',scrollY>40)},{passive:true});
+(function(){
+ var photos=JSON.parse(document.getElementById('PHOTOS').textContent);
+ document.getElementById('himg').src=photos[0];
+ document.querySelectorAll('[data-p]').forEach(function(im){
+   var i=parseInt(im.getAttribute('data-p'),10)%photos.length; im.src=photos[i]||photos[0];
+ });
+})();
+</script>
+<script type="application/json" id="PHOTOS">["https://images.pexels.com/photos/1669754/pexels-photo-1669754.jpeg?auto=compress&cs=tinysrgb&w=1600", "https://images.pexels.com/photos/7218579/pexels-photo-7218579.jpeg?auto=compress&cs=tinysrgb&w=1600", "https://images.pexels.com/photos/7218683/pexels-photo-7218683.jpeg?auto=compress&cs=tinysrgb&w=1600", "https://images.pexels.com/photos/5691677/pexels-photo-5691677.jpeg?auto=compress&cs=tinysrgb&w=1600", "https://images.pexels.com/photos/8481711/pexels-photo-8481711.jpeg?auto=compress&cs=tinysrgb&w=1600", "https://images.pexels.com/photos/32666364/pexels-photo-32666364.jpeg?auto=compress&cs=tinysrgb&w=1800", "https://images.pexels.com/photos/6615806/pexels-photo-6615806.jpeg?auto=compress&cs=tinysrgb&w=1800"]</script>
+</body></html>
