@@ -274,8 +274,8 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:32px 0}
 </div></footer>
 
 <script>
-var hero="https://images.pexels.com/photos/16001819/pexels-photo-16001819.jpeg?auto=compress&cs=tinysrgb&w=1920";
-var photos=["https://images.pexels.com/photos/34339338/pexels-photo-34339338.jpeg?auto=compress&cs=tinysrgb&w=1920", "https://images.pexels.com/photos/32751450/pexels-photo-32751450.jpeg?auto=compress&cs=tinysrgb&w=1600", "https://images.pexels.com/photos/32716845/pexels-photo-32716845.jpeg?auto=compress&cs=tinysrgb&w=1600", "https://images.pexels.com/photos/31090812/pexels-photo-31090812.jpeg?auto=compress&cs=tinysrgb&w=1600", "https://images.pexels.com/photos/30081237/pexels-photo-30081237.jpeg?auto=compress&cs=tinysrgb&w=1600"];
+var hero="https://images.pexels.com/photos/19021943/pexels-photo-19021943.jpeg?auto=compress&cs=tinysrgb&w=1920";
+var photos=["https://images.pexels.com/photos/12001528/pexels-photo-12001528.jpeg?auto=compress&cs=tinysrgb&w=1600", "https://images.pexels.com/photos/1835680/pexels-photo-1835680.jpeg?auto=compress&cs=tinysrgb&w=1600", "https://images.pexels.com/photos/31991752/pexels-photo-31991752.jpeg?auto=compress&cs=tinysrgb&w=1600", "https://images.pexels.com/photos/19626722/pexels-photo-19626722.jpeg?auto=compress&cs=tinysrgb&w=1600", "https://images.pexels.com/photos/3024453/pexels-photo-3024453.jpeg?auto=compress&cs=tinysrgb&w=1600"];
 document.getElementById('himg').src=hero;
 document.querySelectorAll('[data-p]').forEach(function(im){im.src=photos[parseInt(im.getAttribute('data-p'),10)%photos.length]});
 
