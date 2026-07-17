@@ -3,233 +3,359 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#0A0A0B">
+<meta name="theme-color" content="#0B0C0E">
 <title>B.I.B. Layerz · Bricklayer · Bay of Plenty & Waikato</title>
 <meta name="description" content="B.I.B. Layerz. Licensed NZ bricklayer, Japanese craftsman. Bay of Plenty and Waikato.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
 <script>document.documentElement.className+=' js';</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#0A0A0B; --panel:#101013; --card:#15141A; --line:rgba(255,255,255,.09);
-  --paper:#F4F1EC; --mut:#8A8692; --dim:#C7C4CD; --brush:#5E72A6; --brush2:#37456A;
-  --dsp:'Archivo',Impact,sans-serif; --serif:'Fraunces',Georgia,serif;
+  --ink:#0B0C0E; --ink2:#101216; --card:#14161B; --line:rgba(242,239,233,.1); --line2:rgba(242,239,233,.18);
+  --paper:#F2EFE9; --mut:#82868F; --dim:#C9C6BF; --ai:#7D91C4; --ai2:#46557E; --aiD:#2A3450;
+  --dsp:'Archivo',Impact,sans-serif; --serif:'Fraunces',Georgia,serif; --jp:'Noto Serif JP',serif;
   --body:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 }
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:var(--body);background:var(--ink);color:var(--paper);-webkit-font-smoothing:antialiased;
-  overflow-x:hidden;line-height:1.6}
+  overflow-x:hidden;line-height:1.65}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-.wrap{width:100%;max-width:1280px;margin:0 auto;padding-inline:clamp(20px,4.5vw,64px)}
-.lab{font-size:10.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--mut)}
-.lab.p{color:var(--brush)}
-::selection{background:var(--brush);color:#0A0A0B}
-.grain{position:fixed;inset:0;z-index:6;pointer-events:none;opacity:.028;mix-blend-mode:overlay;
+.wrap{width:100%;max-width:1360px;margin:0 auto;padding-inline:clamp(20px,4.5vw,72px)}
+.lab{font-size:10.5px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--mut)}
+.lab.p{color:var(--ai)}
+.jp{font-family:var(--jp);font-weight:400}
+::selection{background:var(--ai);color:#0B0C0E}
+.grain{position:fixed;inset:0;z-index:6;pointer-events:none;opacity:.03;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* motion */
-@keyframes rise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
 @keyframes up{to{transform:translateY(0)}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes growY{from{transform:scaleY(0)}to{transform:scaleY(1)}}
 .js .rz{opacity:0}
-.js .in{animation:rise .95s cubic-bezier(.2,.7,.2,1) both}
-.js .inf{animation:fade 1.2s ease both}
-.js .sr{opacity:0;transform:translateY(46px);transition:opacity 1.1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.js .in{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
+.js .inf{animation:fade 1.4s ease both}
+.js .sr{opacity:0;transform:translateY(42px);transition:opacity 1.1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1)}
 .js .sr.vis{opacity:1;transform:none}
-.js .sx{clip-path:inset(0 100% 0 0);transition:clip-path 1.1s cubic-bezier(.7,0,.2,1)}
+.js .sx{clip-path:inset(0 100% 0 0);transition:clip-path 1.2s cubic-bezier(.7,0,.2,1)}
 .js .sx.vis{clip-path:inset(0 0 0 0)}
+.js .sy{clip-path:inset(100% 0 0 0);transition:clip-path 1.2s cubic-bezier(.7,0,.2,1)}
+.js .sy.vis{clip-path:inset(0 0 0 0)}
 
-/* intro: quiet fade */
+/* intro */
 #load{position:fixed;inset:0;z-index:200;background:var(--ink);display:flex;align-items:center;justify-content:center;
-  transition:opacity .8s ease,visibility .8s}
+  flex-direction:column;gap:18px;transition:opacity .9s ease,visibility .9s}
 #load.gone{opacity:0;visibility:hidden}
+#load .k{font-family:var(--jp);font-size:clamp(15px,2vw,19px);color:var(--ai);letter-spacing:.55em;text-indent:.55em;
+  opacity:0;animation:fade 1s ease .1s forwards}
 #load .lm{font-family:var(--dsp);font-weight:900;text-transform:uppercase;
-  font-size:clamp(28px,5.4vw,58px);letter-spacing:-.03em;color:var(--paper);opacity:0;animation:fade 1s ease .1s forwards}
-#load .lm b{color:var(--brush)}
+  font-size:clamp(26px,5vw,54px);letter-spacing:-.02em;color:var(--paper);opacity:0;animation:fade 1s ease .3s forwards}
+#load .lm b{color:var(--ai)}
+#load .ln{width:54px;height:1px;background:var(--ai2);transform-origin:center;animation:grow 1.1s cubic-bezier(.2,.7,.2,1) .5s both}
 
-/* wordmark + header */
-.brush{font-family:var(--dsp);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;font-size:20px}
-.brush b{color:var(--brush)}
+/* header */
+.wm{font-family:var(--dsp);font-weight:900;text-transform:uppercase;letter-spacing:-.01em;font-size:17px}
+.wm b{color:var(--ai)}
+.wm em{display:block;font-family:var(--body);font-style:normal;font-weight:500;font-size:8.5px;
+  letter-spacing:.34em;color:var(--mut);text-transform:uppercase;margin-top:3px}
 header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.4s;border-bottom:1px solid transparent}
-header.stuck{background:rgba(10,10,11,.7);backdrop-filter:blur(18px);border-bottom-color:var(--line)}
-.hb{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:22px}
-.nav{display:flex;gap:34px}
-.nav a{font-size:13px;font-weight:500;color:var(--dim);position:relative}
-.nav a:after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;background:var(--brush);transition:width .3s}
+header.stuck{background:rgba(11,12,14,.72);backdrop-filter:blur(20px);border-bottom-color:var(--line)}
+.hb{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:20px}
+.nav{display:flex;gap:36px}
+.nav a{font-size:12.5px;font-weight:500;letter-spacing:.04em;color:var(--dim);position:relative}
+.nav a:after{content:"";position:absolute;left:0;bottom:-5px;height:1px;width:0;background:var(--ai);transition:width .3s}
 .nav a:hover{color:#fff}.nav a:hover:after{width:100%}
-.cta{display:inline-flex;align-items:center;gap:10px;background:var(--brush);color:#0A0A0B;font-weight:700;font-size:13.5px;
-  padding:13px 24px;border-radius:100px;transition:transform .25s ease,background .25s ease}
-.cta:hover{transform:translateY(-2px);background:#4E6091}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--paper);color:var(--ink);font-weight:700;font-size:13px;
+  letter-spacing:.02em;padding:13px 24px;border-radius:2px;transition:background .25s ease,color .25s ease,transform .25s ease}
+.cta:hover{background:var(--ai);color:#fff;transform:translateY(-2px)}
 .cta svg{width:14px;height:14px}
 
-/* hero + LIQUID PAINT */
-.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.62}
-.hero-bg:after{content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,var(--ink) 6%,rgba(10,10,11,.45) 55%,transparent),linear-gradient(0deg,var(--ink),transparent 46%)}
-header,.hero .wrap,.strip,.pad,.band,footer{position:relative;z-index:2}
-.hero .wrap{position:relative;z-index:3;padding-top:110px;padding-bottom:60px;will-change:transform}
-.hero .lab{margin-bottom:24px}
-.hero h1{font-family:var(--dsp);font-weight:900;text-transform:uppercase;letter-spacing:-.04em;
-  font-size:clamp(56px,11vw,150px);line-height:.86}
-.hero h1 .w{display:block;overflow:hidden}
-.hero h1 .w>span{display:inline-block;transform:translateY(112%);animation:up 1s cubic-bezier(.2,.85,.25,1) forwards}
-.hero h1 .em{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:none;letter-spacing:-.01em;
-  color:var(--brush);font-size:clamp(30px,5.6vw,80px);line-height:1.02;margin-top:14px}
-.hero p{color:var(--dim);font-size:clamp(16px,1.8vw,20px);max-width:40ch;margin:30px 0 38px}
-.hero .row{display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px}
-.ghost{display:inline-flex;align-items:center;gap:11px;font-weight:600;font-size:14.5px;color:#fff;
-  border-bottom:1px solid var(--brush);padding-bottom:3px;transition:gap .25s}
+/* ══ HERO: framed like a gallery print ══ */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(11,12,14,.62),rgba(11,12,14,.1) 40%,rgba(11,12,14,.22) 62%,var(--ink) 97%)}
+/* the hairline frame */
+.frame{position:absolute;inset:clamp(14px,2vw,26px);border:1px solid rgba(242,239,233,.16);z-index:1;pointer-events:none}
+.js .frame{opacity:0;animation:fade 1.6s ease .9s forwards}
+.frame:after{content:"BAY OF PLENTY · WAIKATO";position:absolute;bottom:-1px;left:28px;transform:translateY(50%);
+  background:var(--ink);padding:0 12px;font-size:9px;letter-spacing:.3em;color:var(--mut)}
+/* vertical rail */
+.rail{position:absolute;top:0;bottom:0;right:clamp(26px,3.4vw,52px);z-index:2;display:flex;align-items:center;pointer-events:none}
+.rail .v{writing-mode:vertical-rl;font-family:var(--jp);font-size:13px;letter-spacing:.6em;color:rgba(242,239,233,.5);
+  display:flex;align-items:center;gap:16px}
+.rail .v:before{content:"";width:1px;height:74px;background:var(--ai2);transform-origin:top;animation:growY 1.2s cubic-bezier(.2,.7,.2,1) 1.2s both}
+.hero .wrap{position:relative;z-index:3;padding-bottom:clamp(56px,8vw,104px);padding-top:130px;will-change:transform}
+.hero .lab{margin-bottom:26px;display:flex;align-items:center;gap:14px}
+.hero .lab i{display:inline-block;width:44px;height:1px;background:var(--ai);font-style:normal;transform-origin:left}
+.js .hero .lab i{animation:grow .9s cubic-bezier(.2,.7,.2,1) .5s both}
+.hero h1{font-family:var(--dsp);font-weight:900;text-transform:uppercase;letter-spacing:-.045em;
+  font-size:clamp(58px,12.5vw,176px);line-height:.84}
+.hero h1 .w{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.hero h1 .w>span{display:inline-block;transform:translateY(115%);animation:up 1.05s cubic-bezier(.2,.85,.25,1) forwards}
+.hero h1 .em{font-family:var(--serif);font-weight:300;font-style:italic;text-transform:none;letter-spacing:-.015em;
+  color:var(--ai);font-size:clamp(30px,5.4vw,82px);line-height:1.04;margin-top:18px}
+.hero .sub{display:flex;gap:22px;margin-top:34px;max-width:560px}
+.hero .sub:before{content:"";flex:0 0 1px;background:var(--line2);margin-block:4px}
+.hero .sub p{color:var(--dim);font-size:clamp(15px,1.7vw,18px);line-height:1.7}
+.hero .row{display:flex;flex-wrap:wrap;align-items:center;gap:18px 30px;margin-top:40px}
+.ghost{display:inline-flex;align-items:center;gap:11px;font-weight:600;font-size:13.5px;letter-spacing:.03em;color:#fff;
+  border-bottom:1px solid var(--ai);padding-bottom:4px;transition:gap .25s}
 .ghost:hover{gap:17px}
-.scroll{position:absolute;left:0;right:0;bottom:24px;z-index:3;text-align:center;color:var(--mut);font-size:11px;letter-spacing:.24em;text-transform:uppercase}
-.scroll span{display:inline-block;animation:bob 2s ease-in-out infinite}
+.scroll{position:absolute;left:50%;bottom:clamp(22px,3vw,38px);transform:translateX(-50%);z-index:3;
+  color:var(--mut);font-size:9.5px;letter-spacing:.3em;text-transform:uppercase}
+.scroll span{display:inline-block;animation:bob 2.2s ease-in-out infinite}
 @keyframes bob{50%{transform:translateY(6px)}}
 
-/* word-stagger reveal for headings */
-.js .wl{display:inline-block;overflow:hidden;vertical-align:top}
-.js .wl>i{display:inline-block;font-style:inherit;transform:translateY(115%);transition:transform .85s cubic-bezier(.2,.85,.25,1)}
+/* word-stagger for headings */
+.js .wl{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.js .wl>i{display:inline-block;font-style:inherit;transform:translateY(118%);transition:transform .9s cubic-bezier(.2,.85,.25,1)}
 .js .vis .wl>i,.js .wl.vis>i{transform:translateY(0)}
 
-/* giant kinetic paint band */
-.band{background:var(--brush);color:var(--ink);overflow:hidden;padding:clamp(30px,5vw,64px) 0;position:relative}
-.band .row{display:flex;white-space:nowrap;font-family:var(--dsp);font-weight:900;text-transform:uppercase;
-  letter-spacing:-.03em;font-size:clamp(60px,13vw,190px);line-height:.9;gap:.4em;will-change:transform}
-.band .row span{display:inline-block;padding-right:.4em}
-.band .row .o{-webkit-text-stroke:2px var(--ink);color:transparent}
-
 /* marquee */
-.strip{border-block:1px solid var(--line);background:var(--panel);overflow:hidden;padding:20px 0}
-.mq{display:flex;gap:54px;white-space:nowrap;animation:mv 32s linear infinite;font-family:var(--serif);font-style:italic;
-  font-size:clamp(18px,2.4vw,26px);color:var(--dim)}
-.mq span{display:inline-flex;gap:54px}.mq b{color:var(--brush);font-family:var(--dsp);font-style:normal;font-weight:800}
+.strip{border-block:1px solid var(--line);background:var(--ink2);overflow:hidden;padding:19px 0}
+.mq{display:flex;gap:0;white-space:nowrap;animation:mv 36s linear infinite;
+  font-size:clamp(13px,1.6vw,16px);color:var(--dim)}
+.mq span{display:inline-flex;align-items:center}
+.mq b{color:var(--paper);font-weight:600;letter-spacing:.02em}
+.mq i{font-family:var(--jp);font-style:normal;color:var(--ai);margin:0 26px;font-size:.85em}
 @keyframes mv{to{transform:translateX(-50%)}}
 
 /* sections */
-.pad{padding:clamp(84px,12vw,180px) 0;position:relative}
-.ey{display:flex;align-items:center;gap:16px;margin-bottom:26px}
-.ey .ln{height:1px;width:54px;background:var(--brush);transform-origin:left}
+.pad{padding:clamp(90px,13vw,200px) 0;position:relative}
+.ey{display:flex;align-items:center;gap:16px;margin-bottom:30px}
+.ey .ln{height:1px;width:54px;background:var(--ai);transform-origin:left}
 .js .vis .ln,.js .ey.vis .ln{animation:grow .8s cubic-bezier(.2,.7,.2,1) both}
-h2{font-family:var(--dsp);font-weight:900;text-transform:uppercase;letter-spacing:-.03em;font-size:clamp(34px,5.6vw,74px);line-height:.96}
-h2 .it{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:none;color:var(--brush)}
-.lede{color:var(--dim);font-size:clamp(16px,1.7vw,19px);max-width:52ch;margin-top:20px}
+h2{font-family:var(--dsp);font-weight:900;text-transform:uppercase;letter-spacing:-.035em;font-size:clamp(36px,5.8vw,80px);line-height:.94}
+h2 .it{font-family:var(--serif);font-weight:300;font-style:italic;text-transform:none;color:var(--ai)}
+.lede{color:var(--dim);font-size:clamp(15.5px,1.7vw,19px);max-width:56ch;margin-top:22px;line-height:1.75}
 
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);
-  border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:52px}
-.stat{background:var(--ink);padding:clamp(26px,3.2vw,42px)}
-.stat .v{font-family:var(--dsp);font-weight:900;font-size:clamp(36px,4.6vw,58px);letter-spacing:-.03em;line-height:1}
-.stat .v em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--brush)}
-.stat .k{color:var(--mut);font-size:12.5px;margin-top:12px}
+/* statement w/ kanji watermark */
+.stmt{position:relative}
+.stmt .kanji{position:absolute;right:clamp(0px,4vw,80px);top:50%;transform:translateY(-50%);z-index:0;
+  font-family:var(--jp);font-weight:600;font-size:clamp(160px,30vw,430px);line-height:1;color:transparent;
+  -webkit-text-stroke:1px rgba(125,145,196,.14);pointer-events:none;user-select:none}
+.stmt .wrap{position:relative;z-index:1}
+.bigq{font-family:var(--serif);font-weight:300;font-size:clamp(24px,3.4vw,44px);line-height:1.34;letter-spacing:-.01em;
+  max-width:26ch;margin-top:34px}
+.bigq em{font-style:italic;color:var(--ai)}
+.sig{display:flex;align-items:center;gap:18px;margin-top:42px}
+.sig .hanko{width:46px;height:46px;border:1px solid var(--ai2);border-radius:4px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--jp);font-size:19px;color:var(--ai);background:rgba(125,145,196,.06)}
+.sig .who{font-size:13px;color:var(--mut);line-height:1.5}
+.sig .who b{display:block;color:var(--dim);font-weight:600;letter-spacing:.02em}
 
-.work{background:var(--panel);border-block:1px solid var(--line)}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,1.6vw,20px);margin-top:56px}
-.f{position:relative;overflow:hidden;border-radius:8px;background:var(--card)}
-.f img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);will-change:transform}
-.f:hover{box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
-.f .cap{position:absolute;left:0;right:0;bottom:0;padding:20px;z-index:2;background:linear-gradient(0deg,rgba(10,10,11,.92),transparent)}
-.f .cap .t{font-family:var(--dsp);font-weight:800;text-transform:uppercase;font-size:16px}
-.a{grid-column:span 7;aspect-ratio:16/11}.b{grid-column:span 5;aspect-ratio:4/5}
-.c{grid-column:span 4;aspect-ratio:1/1}.d{grid-column:span 4;aspect-ratio:1/1}.e{grid-column:span 4;aspect-ratio:1/1}
+/* stats: hairline table */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:64px;border-top:1px solid var(--line)}
+.stat{padding:clamp(28px,3vw,40px) clamp(4px,1.6vw,28px) 6px 0;border-bottom:1px solid var(--line);position:relative}
+.stat:before{content:"";position:absolute;top:-1px;left:0;width:54px;height:1px;background:var(--ai);transform:scaleX(0);transform-origin:left;transition:transform 1s cubic-bezier(.2,.7,.2,1) .3s}
+.js .stats.vis .stat:before{transform:scaleX(1)}
+.stat .v{font-family:var(--dsp);font-weight:800;font-size:clamp(38px,4.8vw,62px);letter-spacing:-.03em;line-height:1}
+.stat .v em{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--ai);font-size:.62em}
+.stat .k{color:var(--mut);font-size:12px;letter-spacing:.06em;margin:14px 0 26px}
 
-.q .wrap{max-width:1000px}
-.qhead{max-width:60ch;margin-bottom:64px}
-.qrow{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,4vw,54px);align-items:start;
+/* ══ WORK: editorial ledger ══ */
+.work{background:var(--ink2);border-block:1px solid var(--line)}
+.whead{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:clamp(44px,6vw,84px)}
+.whead .jp-side{font-family:var(--jp);color:var(--mut);font-size:13px;letter-spacing:.4em}
+.piece{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(16px,2.4vw,40px);align-items:end;
+  padding-block:clamp(30px,4vw,54px);border-top:1px solid var(--line)}
+.piece:last-of-type{border-bottom:1px solid var(--line)}
+.piece .no{grid-column:span 1;font-family:var(--serif);font-style:italic;font-weight:300;color:var(--ai);
+  font-size:clamp(18px,2vw,26px);padding-bottom:6px}
+.piece .ph{grid-column:span 7;overflow:hidden;border-radius:2px;position:relative}
+.piece .ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);will-change:transform;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.piece:hover .ph img{transform:scale(1.03)}
+.piece .meta{grid-column:span 4;padding-bottom:8px}
+.piece .meta h3{font-family:var(--dsp);font-weight:800;text-transform:uppercase;letter-spacing:-.015em;
+  font-size:clamp(20px,2.4vw,30px);line-height:1.04}
+.piece .meta .jpl{font-family:var(--jp);color:var(--ai);font-size:13px;letter-spacing:.3em;margin-top:10px}
+.piece .meta p{color:var(--mut);font-size:14px;margin-top:14px;max-width:34ch;line-height:1.7}
+.piece:nth-of-type(even) .ph{order:3}
+.piece:nth-of-type(even) .meta{order:2;text-align:right}
+.piece:nth-of-type(even) .meta p{margin-left:auto}
+.p-tall{aspect-ratio:4/3}.p-wide{aspect-ratio:16/9}.p-sq{aspect-ratio:5/4}
+
+/* principles */
+.prin{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-top:clamp(60px,8vw,100px)}
+.pr{background:var(--ink);padding:clamp(30px,3.4vw,48px)}
+.pr .kj{font-family:var(--jp);font-weight:600;font-size:clamp(34px,3.6vw,46px);color:var(--ai);line-height:1}
+.pr .rd{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);margin:12px 0 22px}
+.pr h4{font-family:var(--dsp);font-weight:800;text-transform:uppercase;font-size:17px;letter-spacing:-.01em;margin-bottom:10px}
+.pr p{color:var(--mut);font-size:14px;line-height:1.7}
+
+/* band */
+.band{background:var(--aiD);color:var(--paper);overflow:hidden;padding:clamp(28px,4.6vw,58px) 0;position:relative;border-block:1px solid var(--line)}
+.band .rowb{display:flex;white-space:nowrap;font-family:var(--dsp);font-weight:900;text-transform:uppercase;
+  letter-spacing:-.03em;font-size:clamp(54px,12vw,170px);line-height:.9;gap:.42em;will-change:transform}
+.band .rowb span{display:inline-block;padding-right:.42em}
+.band .rowb .o{-webkit-text-stroke:1.5px rgba(242,239,233,.65);color:transparent}
+.band .rowb .j{font-family:var(--jp);font-weight:600;-webkit-text-stroke:0;color:var(--ai);font-size:.82em;align-self:center}
+
+/* questions */
+.q .wrap{max-width:1020px}
+.qhead{max-width:62ch;margin-bottom:64px}
+.qrow{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,4vw,56px);align-items:start;
   padding:clamp(28px,3.4vw,44px) 0;border-top:1px solid var(--line)}
 .qrow:last-child{border-bottom:1px solid var(--line)}
-.qn{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3vw,40px);color:var(--brush);line-height:1}
-.qrow h3{font-family:var(--dsp);font-weight:800;text-transform:uppercase;font-size:clamp(21px,2.8vw,32px);line-height:1.05;margin-bottom:12px}
-.qrow p{color:var(--mut);font-size:15.5px;max-width:58ch}
+.qn{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(24px,2.8vw,38px);color:var(--ai);line-height:1.1}
+.qrow h3{font-family:var(--dsp);font-weight:800;text-transform:uppercase;font-size:clamp(20px,2.7vw,30px);line-height:1.06;margin-bottom:12px;letter-spacing:-.015em}
+.qrow p{color:var(--mut);font-size:15px;max-width:60ch;line-height:1.7}
 
-.proc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(16px,2vw,24px);margin-top:56px}
-.step{border:1px solid var(--line);border-radius:10px;padding:clamp(26px,2.6vw,34px);background:var(--card);transition:.3s}
-.js .step{opacity:0;transform:translateY(34px)}
+/* process */
+.proc{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(16px,2vw,26px);margin-top:60px}
+.step{border:1px solid var(--line);padding:clamp(26px,2.6vw,36px);background:var(--card);transition:.35s;border-radius:2px;position:relative;overflow:hidden}
+.step:after{content:"";position:absolute;left:0;top:0;width:100%;height:2px;background:var(--ai);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.step:hover:after{transform:scaleX(1)}
+.js .step{opacity:0;transform:translateY(30px)}
 .js .step.vis{opacity:1;transform:none;transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
-.js .step:nth-child(2).vis{transition-delay:.08s}.js .step:nth-child(3).vis{transition-delay:.16s}.js .step:nth-child(4).vis{transition-delay:.24s}
-.step:hover{border-color:var(--brush2);transform:translateY(-5px)}
-.step .n{font-family:var(--serif);font-style:italic;color:var(--brush);font-size:22px;margin-bottom:18px}
-.step h4{font-family:var(--dsp);font-weight:800;text-transform:uppercase;font-size:18px;margin-bottom:10px}
-.step p{color:var(--mut);font-size:14.5px}
+.js .step:nth-child(2).vis{transition-delay:.09s}.js .step:nth-child(3).vis{transition-delay:.18s}.js .step:nth-child(4).vis{transition-delay:.27s}
+.step:hover{border-color:var(--ai2);transform:translateY(-5px)}
+.step .n{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--ai);font-size:21px;margin-bottom:20px}
+.step h4{font-family:var(--dsp);font-weight:800;text-transform:uppercase;font-size:16.5px;margin-bottom:10px;letter-spacing:-.01em}
+.step p{color:var(--mut);font-size:14px;line-height:1.7}
 
-.close{background:linear-gradient(180deg,var(--panel),var(--ink));border-top:1px solid var(--line);text-align:center;position:relative;overflow:hidden}
+/* close */
+.close{background:linear-gradient(180deg,var(--ink2),var(--ink));border-top:1px solid var(--line);text-align:center;position:relative;overflow:hidden}
+.close .kanji{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--jp);font-weight:600;
+  font-size:clamp(240px,44vw,560px);color:transparent;-webkit-text-stroke:1px rgba(125,145,196,.08);pointer-events:none;user-select:none;line-height:1}
 .close .wrap{position:relative;z-index:1}
-.close h2{margin-bottom:20px}.close .lede{margin:0 auto 40px}
-.dial{font-family:var(--dsp);font-weight:900;font-size:clamp(38px,6.4vw,84px);letter-spacing:-.03em;display:inline-block;
-  color:var(--paper);transition:color .3s}
-.dial:hover{color:var(--brush)}
-.cinfo{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 40px;margin-top:34px;color:var(--dim);font-size:15px}
-.cinfo a{border-bottom:1px solid var(--brush);padding-bottom:2px}.cinfo b{color:var(--mut);margin-right:8px}
-footer{background:var(--ink);border-top:1px solid var(--line);padding:32px 0}
-.fb{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px}
-.fb .sm{color:var(--mut);font-size:12px}
+.close h2{margin-bottom:22px}
+.close .lede{margin:0 auto 44px}
+.dial{font-family:var(--dsp);font-weight:900;font-size:clamp(38px,6.6vw,92px);letter-spacing:-.035em;display:inline-block;
+  color:var(--paper);transition:color .3s;line-height:1}
+.dial:hover{color:var(--ai)}
+.dial u{text-decoration:none;border-bottom:3px solid var(--ai)}
+.cinfo{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 44px;margin-top:40px;color:var(--dim);font-size:14.5px}
+.cinfo a{border-bottom:1px solid var(--ai);padding-bottom:2px}
+.cinfo b{color:var(--mut);margin-right:8px;font-weight:500}
 
-@media(max-width:860px){
+footer{background:var(--ink);border-top:1px solid var(--line);padding:44px 0 40px;overflow:hidden}
+.foot-mark{font-family:var(--dsp);font-weight:900;text-transform:uppercase;letter-spacing:-.04em;
+  font-size:clamp(52px,11vw,150px);line-height:.9;color:transparent;-webkit-text-stroke:1px rgba(242,239,233,.16);
+  white-space:nowrap;user-select:none}
+.fb{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-top:26px}
+.fb .sm{color:var(--mut);font-size:11.5px;letter-spacing:.04em}
+
+@media(max-width:900px){
   .nav{display:none}
-  .a,.b,.c,.d,.e{grid-column:span 12}.a,.b{aspect-ratio:4/3}
-  .qrow{grid-template-columns:1fr;gap:8px}.qn{font-size:22px}
+  .rail{display:none}
+  .piece{grid-template-columns:1fr;gap:14px;align-items:start}
+  .piece .no{grid-column:auto}
+  .piece .ph{grid-column:auto;order:2!important}
+  .piece .meta{grid-column:auto;order:3!important;text-align:left!important;padding-top:4px}
+  .piece .meta p{margin-left:0!important}
+  .stmt .kanji{opacity:.5}
+  .qrow{grid-template-columns:1fr;gap:8px}.qn{font-size:20px}
+  .hero .sub{margin-top:26px}
 }
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rz,.js .sr,.js .sx{opacity:1;transform:none;clip-path:none}.hero h1 .w>span{transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rz,.js .sr,.js .sx,.js .sy,.js .frame{opacity:1;transform:none;clip-path:none}.hero h1 .w>span{transform:none}}
 </style></head><body>
 
 <div class="grain"></div>
-<div id="load"><div class="lm">B.I.B. Layerz<b>.</b></div></div>
+<div id="load"><div class="k">職人の仕事</div><div class="lm">B.I.B. Layerz<b>.</b></div><div class="ln"></div></div>
 
 <header id="hd"><div class="wrap hb">
-  <div class="brush">B.I.B. Layerz<b>.</b></div>
-  <nav class="nav"><a href="#work">Work</a><a href="#questions">Before you hire</a><a href="#process">Process</a><a href="#contact">Contact</a></nav>
-  <a class="cta" href="#contact">Get a quote <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <div class="wm">B.I.B. Layerz<b>.</b><em>Bricklayer · NZ</em></div>
+  <nav class="nav"><a href="#work">Work</a><a href="#craft">The craft</a><a href="#questions">Before you hire</a><a href="#process">Process</a><a href="#contact">Contact</a></nav>
+  <a class="cta" href="#contact">Book a site visit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div></header>
 
 <div class="hero" id="hero">
   <div class="hero-bg inf"><img id="himg" alt="Brickwork"></div>
+  <div class="frame"></div>
+  <div class="rail"><div class="v jp">職人の仕事 · 煉瓦</div></div>
   <div class="wrap" id="hcopy">
-    <div class="lab p rz in" style="animation-delay:.1s">Licensed Bricklayer · Bay of Plenty & Waikato · 職人</div>
+    <div class="lab p rz in" style="animation-delay:.15s"><i></i>Licensed Bricklayer · Bay of Plenty &amp; Waikato</div>
     <h1>
-      <span class="w"><span style="animation-delay:.15s">Brickwork</span></span>
-      <span class="em w"><span style="animation-delay:.34s">with Japanese precision.</span></span>
+      <span class="w"><span style="animation-delay:.2s">Laid once.</span></span>
+      <span class="em w"><span style="animation-delay:.42s">Laid properly.</span></span>
     </h1>
-    <p class="rz in" style="animation-delay:.66s">Licensed NZ bricklayer with fourteen years across Japan and New Zealand. Brick and block, feature walls, paving and restoration, laid straight and true across Bay of Plenty and Waikato.</p>
-    <div class="row rz in" style="animation-delay:.8s">
+    <div class="sub rz in" style="animation-delay:.72s">
+      <p>Brick and blockwork by a licensed NZ bricklayer trained as a craftsman in Japan. Fourteen years on the trowel across two countries, now working Bay of Plenty and Waikato.</p>
+    </div>
+    <div class="row rz in" style="animation-delay:.88s">
       <a class="cta" href="#contact">Book a site visit</a>
+      <a class="ghost" href="#work">See the work</a>
     </div>
   </div>
-  <div class="scroll inf" style="animation-delay:1.3s"><span>Scroll</span></div>
+  <div class="scroll inf" style="animation-delay:1.5s"><span>Scroll</span></div>
 </div>
 
 <div class="strip"><div class="mq">
-  <span><b>Brickwork</b> laid true <b>Blockwork</b> solid <b>Feature walls</b> squared <b>Paving</b> herringbone <b>Restoration</b> and repointing&nbsp;</span>
-  <span><b>Brickwork</b> laid true <b>Blockwork</b> solid <b>Feature walls</b> squared <b>Paving</b> herringbone <b>Restoration</b> and repointing&nbsp;</span>
+  <span><b>Brickwork</b><i>煉瓦</i><b>Blockwork</b><i>精密</i><b>Feature walls</b><i>丁寧</i><b>Paving</b><i>正確</i><b>Restoration &amp; repointing</b><i>職人</i></span>
+  <span><b>Brickwork</b><i>煉瓦</i><b>Blockwork</b><i>精密</i><b>Feature walls</b><i>丁寧</i><b>Paving</b><i>正確</i><b>Restoration &amp; repointing</b><i>職人</i></span>
 </div></div>
 
-<section class="pad"><div class="wrap">
-  <div class="ey sr"><span class="ln"></span><span class="lab">The craft</span></div>
-  <h2 class="sr">Not the cheapest quote.<br><span class="it">The one you don't redo.</span></h2>
-  <p class="lede sr">Trained in the shokunin tradition in Japan, then fourteen years on New Zealand sites. The difference is the set-out, the mortar, and courses that stay dead level.</p>
-  <div class="stats sr">
-    <div class="stat"><div class="v ct" data-n="100"><span class="num">0</span><em>%</em></div><div class="k">Level and plumb, every course</div></div>
-    <div class="stat"><div class="v ct" data-n="14"><span class="num">0</span><em>yr</em></div><div class="k">On the tools, Japan and New Zealand</div></div>
-    <div class="stat"><div class="v">Free</div><div class="k">Site visit and quote</div></div>
-    <div class="stat"><div class="v ct" data-n="580"><span class="num">0</span></div><div class="k">Following on Instagram</div></div>
+<section class="stmt pad" id="craft">
+  <div class="kanji jp" aria-hidden="true">職人</div>
+  <div class="wrap">
+    <div class="ey sr"><span class="ln"></span><span class="lab">The craft</span></div>
+    <h2 class="sr">Shokunin.<br><span class="it">The craftsman's standard.</span></h2>
+    <p class="bigq sr">In Japan it has a name: <em>shokunin</em>. The idea that how you do the small, unseen things <em>is</em> the work. The set-out, the mortar, the line you check twice.</p>
+    <div class="sig sr">
+      <div class="hanko jp">職</div>
+      <div class="who"><b>B.I.B. Layerz</b>Licensed NZ bricklayer · trained in Japan</div>
+    </div>
+    <div class="stats sr">
+      <div class="stat"><div class="v ct" data-n="14"><span class="num">0</span><em>yrs</em></div><div class="k">On the tools, Japan and New Zealand</div></div>
+      <div class="stat"><div class="v">Licensed</div><div class="k">NZ bricklayer</div></div>
+      <div class="stat"><div class="v">2</div><div class="k">Regions covered, BOP and Waikato</div></div>
+      <div class="stat"><div class="v ct" data-n="153"><span class="num">0</span></div><div class="k">Jobs and pours on the grid</div></div>
+    </div>
   </div>
-</div></section>
+</section>
 
 <section class="work pad" id="work"><div class="wrap">
-  <div class="ey sr"><span class="ln"></span><span class="lab">Recent work</span></div>
-  <h2 class="sr">The brickwork <span class="it">speaks first.</span></h2>
-  <div class="grid">
-    <div class="f sx a"><img data-p="1" alt="Brickwork"><div class="cap"><div class="t">Brickwork</div></div></div>
-    <div class="f sx b"><img data-p="2" alt="Feature wall"><div class="cap"><div class="t">Feature wall</div></div></div>
-    <div class="f sx c"><img data-p="3" alt="Precision and line"><div class="cap"><div class="t">Precision &amp; line</div></div></div>
-    <div class="f sx d"><img data-p="4" alt="Paving"><div class="cap"><div class="t">Herringbone paving</div></div></div>
-    <div class="f sx e"><img data-p="5" alt="Restoration"><div class="cap"><div class="t">Restoration</div></div></div>
+  <div class="whead">
+    <div>
+      <div class="ey sr"><span class="ln"></span><span class="lab">Recent work</span></div>
+      <h2 class="sr">The wall <span class="it">is the résumé.</span></h2>
+    </div>
+    <div class="jp-side sr jp">最近の仕事</div>
+  </div>
+
+  <div class="piece sr">
+    <div class="no">01</div>
+    <div class="ph p-wide sx"><img data-p="0" alt="Brickwork"></div>
+    <div class="meta"><h3>Brickwork</h3><div class="jpl jp">煉瓦積み</div><p>New builds and additions. Courses dead level, joints struck clean, cavities kept clear.</p></div>
+  </div>
+  <div class="piece sr">
+    <div class="no">02</div>
+    <div class="ph p-tall sx"><img data-p="1" alt="Feature wall"></div>
+    <div class="meta"><h3>Feature walls</h3><div class="jpl jp">意匠壁</div><p>Interior and exterior statement walls. The bond, the brick and the joint chosen to suit the house.</p></div>
+  </div>
+  <div class="piece sr">
+    <div class="no">03</div>
+    <div class="ph p-wide sx"><img data-p="2" alt="Blockwork"></div>
+    <div class="meta"><h3>Blockwork</h3><div class="jpl jp">ブロック工事</div><p>Foundations, boundary and retaining structures. Reinforced, filled and flushed properly.</p></div>
+  </div>
+  <div class="piece sr">
+    <div class="no">04</div>
+    <div class="ph p-sq sx"><img data-p="3" alt="Precision and line"></div>
+    <div class="meta"><h3>Precision &amp; line</h3><div class="jpl jp">正確な目地</div><p>The part you feel more than see. Perps aligned, beds even, faces flush under raking light.</p></div>
+  </div>
+  <div class="piece sr">
+    <div class="no">05</div>
+    <div class="ph p-wide sx"><img data-p="4" alt="Paving and restoration"></div>
+    <div class="meta"><h3>Paving &amp; restoration</h3><div class="jpl jp">舗装・修復</div><p>Herringbone and basket-weave paving, plus repointing and repair of older brickwork.</p></div>
+  </div>
+
+  <div class="prin sr">
+    <div class="pr"><div class="kj jp">正確</div><div class="rd">Seikaku · accuracy</div><h4>Measured twice</h4><p>Set-out is checked before a single brick is buttered. Lines, levels and gauge, every lift.</p></div>
+    <div class="pr"><div class="kj jp">丁寧</div><div class="rd">Teinei · care</div><h4>Neat by habit</h4><p>Clean joints, clean site, clean cut-offs. Tidy work is not extra, it is the default.</p></div>
+    <div class="pr"><div class="kj jp">継続</div><div class="rd">Keizoku · endurance</div><h4>Built to stay</h4><p>The right mix, the right ties, the right falls. Work that still looks right in thirty years.</p></div>
   </div>
 </div></section>
 
-<div class="band"><div class="row" id="kb">
-  <span>Layerz.</span><span class="o">Brick</span><span>Layerz.</span><span class="o">Brick</span><span>Layerz.</span><span class="o">Brick</span>
+<div class="band"><div class="rowb" id="kb">
+  <span>Layerz.</span><span class="o">Brick</span><span class="j jp">煉瓦</span><span>Layerz.</span><span class="o">Brick</span><span class="j jp">職人</span><span>Layerz.</span><span class="o">Brick</span>
 </div></div>
 
 <section class="q pad" id="questions"><div class="wrap">
@@ -241,50 +367,57 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:32px 0}
   <div class="qrow sr"><div class="qn">01</div><div><h3>What mortar mix for this job?</h3><p>The wrong mix cracks or stains within a year. A pro specs the mortar for your bricks and the exposure.</p></div></div>
   <div class="qrow sr"><div class="qn">02</div><div><h3>How are the footings set out?</h3><p>Brickwork is only as good as what it sits on. Proper footings and set-out stop cracking down the track.</p></div></div>
   <div class="qrow sr"><div class="qn">03</div><div><h3>What is included in the quote?</h3><p>Materials, set-out, cleanup and finishing. A cheap quote almost always left one of these out.</p></div></div>
-  <div class="qrow sr"><div class="qn">04</div><div><h3>Who is on the tools, insured?</h3><p>You should know who turns up on site, and that they are insured.</p></div></div>
-  <div class="qrow sr"><div class="qn">05</div><div><h3>What if a course is not true?</h3><p>A real guarantee is in writing. If a line is not right, we pull it and lay it again.</p></div></div>
+  <div class="qrow sr"><div class="qn">04</div><div><h3>Who is on the tools, licensed?</h3><p>You should know who turns up on site, and that they hold the licence for the work.</p></div></div>
+  <div class="qrow sr"><div class="qn">05</div><div><h3>What if a course is not true?</h3><p>If a line is not right, it comes down and gets laid again. That is the standard.</p></div></div>
 </div></section>
 
 <section class="pad" id="process"><div class="wrap">
   <div class="ey sr"><span class="ln"></span><span class="lab">How it works</span></div>
   <h2 class="sr">Simple, <span class="it">hello to done.</span></h2>
   <div class="proc">
-    <div class="step sr"><div class="n">01</div><h4>Walk-through</h4><p>We come to site, talk brick, block and layout. No pressure.</p></div>
-    <div class="step sr"><div class="n">02</div><h4>Clear quote</h4><p>Itemised and honest. You see materials and set-out before we start.</p></div>
+    <div class="step sr"><div class="n">01</div><h4>Site visit</h4><p>We walk the job, talk brick, block and layout. No pressure.</p></div>
+    <div class="step sr"><div class="n">02</div><h4>Clear quote</h4><p>Itemised and honest. You see materials and set-out before anything starts.</p></div>
     <div class="step sr"><div class="n">03</div><h4>The work</h4><p>Tidy site, clean joints, courses dead level. Cleaned up daily.</p></div>
-    <div class="step sr"><div class="n">04</div><h4>Walk-out</h4><p>We walk the job with you. Nothing signed off until you are happy.</p></div>
+    <div class="step sr"><div class="n">04</div><h4>Walk-out</h4><p>We walk the finished job together. Nothing is signed off until you are happy.</p></div>
   </div>
 </div></section>
 
-<section class="close pad" id="contact"><div class="wrap">
-  <div class="ey sr" style="justify-content:center"><span class="lab p">Enquiries</span></div>
-  <h2 class="sr">Let's talk about <span class="it">your place.</span></h2>
-  <p class="lede sr">Ring, or send a couple of photos. We come back fast.</p>
-  <a class="dial sr" href="mailto:info@biblayerz.co.nz">Get a quote.</a>
-  <div class="cinfo sr">
-    
-    <span><b>Email</b><a href="mailto:info@biblayerz.co.nz">info@biblayerz.co.nz</a></span>
-    <span><b>Instagram</b><a href="https://www.instagram.com/b.i.b.layerz/" target="_blank" rel="noopener">@b.i.b.layerz</a></span>
-    <span><b>Area</b>Bay of Plenty &amp; Waikato</span>
+<section class="close pad" id="contact">
+  <div class="kanji jp" aria-hidden="true">煉瓦</div>
+  <div class="wrap">
+    <div class="ey sr" style="justify-content:center"><span class="lab p">Enquiries</span></div>
+    <h2 class="sr">Let's talk about <span class="it">your place.</span></h2>
+    <p class="lede sr">Email, or message on Instagram with a couple of photos. You will hear back fast.</p>
+    <a class="dial sr" href="mailto:info@biblayerz.co.nz"><u>Get a quote.</u></a>
+    <div class="cinfo sr">
+      <span><b>Email</b><a href="mailto:info@biblayerz.co.nz">info@biblayerz.co.nz</a></span>
+      <span><b>Instagram</b><a href="https://www.instagram.com/b.i.b.layerz/" target="_blank" rel="noopener">@b.i.b.layerz</a></span>
+      <span><b>Area</b>Bay of Plenty &amp; Waikato</span>
+    </div>
   </div>
-</div></section>
+</section>
 
-<footer><div class="wrap fb">
-  <div class="brush">B.I.B. Layerz<b>.</b></div>
-  <div class="sm">B.I.B. Layerz · Licensed bricklayer · Bay of Plenty & Waikato, New Zealand</div>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="foot-mark">B.I.B. LAYERZ</div>
+    <div class="fb">
+      <div class="sm">Licensed bricklayer · Japanese craftsman · Bay of Plenty &amp; Waikato</div>
+      <div class="sm jp">職人の仕事</div>
+    </div>
+  </div>
+</footer>
 
 <script>
 var hero="https://images.pexels.com/photos/13295698/pexels-photo-13295698.jpeg?auto=compress&cs=tinysrgb&w=1920";
-var photos=["https://images.pexels.com/photos/15205206/pexels-photo-15205206.jpeg?auto=compress&cs=tinysrgb&w=1600", "https://images.pexels.com/photos/32968373/pexels-photo-32968373.jpeg?auto=compress&cs=tinysrgb&w=1600", "https://images.pexels.com/photos/34339338/pexels-photo-34339338.jpeg?auto=compress&cs=tinysrgb&w=1600", "https://images.pexels.com/photos/1101125/pexels-photo-1101125.jpeg?auto=compress&cs=tinysrgb&w=1600", "https://images.pexels.com/photos/17366745/pexels-photo-17366745.jpeg?auto=compress&cs=tinysrgb&w=1600"];
+var photos=["https://images.pexels.com/photos/32968373/pexels-photo-32968373.jpeg?auto=compress&cs=tinysrgb&w=1600","https://images.pexels.com/photos/34339338/pexels-photo-34339338.jpeg?auto=compress&cs=tinysrgb&w=1600","https://images.pexels.com/photos/12001528/pexels-photo-12001528.jpeg?auto=compress&cs=tinysrgb&w=1600","https://images.pexels.com/photos/1101125/pexels-photo-1101125.jpeg?auto=compress&cs=tinysrgb&w=1600","https://images.pexels.com/photos/17366745/pexels-photo-17366745.jpeg?auto=compress&cs=tinysrgb&w=1600"];
 document.getElementById('himg').src=hero;
 document.querySelectorAll('[data-p]').forEach(function(im){im.src=photos[parseInt(im.getAttribute('data-p'),10)%photos.length]});
 
 var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 
 // intro loader
-addEventListener('load',function(){setTimeout(off,1500)});
-setTimeout(off,2400);
+addEventListener('load',function(){setTimeout(off,1700)});
+setTimeout(off,2600);
 function off(){var l=document.getElementById('load');if(l)l.classList.add('gone');}
 
 // split section headings into word-mask lines for stagger reveal
@@ -293,32 +426,28 @@ if(!reduce)document.querySelectorAll('h2, .qrow h3').forEach(function(h){
   h.innerHTML=html.replace(/(<[^>]+>)|([^<\s]+)/g,function(m,tag,word){
     return tag? tag : '<span class="wl"><i>'+word+'</i></span>';
   }).replace(/(<\/span>)(\s+)(<span)/g,'$1 $3');
-  // stagger delays
   h.querySelectorAll('.wl>i').forEach(function(i,k){i.style.transitionDelay=(k*.05)+'s';});
 });
 
-// count-up stats: the number is in a data-n; we animate a leading counter span
+// count-up stats
 function countUp(el){var target=parseFloat(el.getAttribute('data-n')),node=el.querySelector('.num');if(!node)return;var t0=null;
-  function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1100),v=Math.round(target*(1-Math.pow(1-p,3)));node.textContent=v;if(p<1)requestAnimationFrame(step);}
+  function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1200),v=Math.round(target*(1-Math.pow(1-p,3)));node.textContent=v;if(p<1)requestAnimationFrame(step);}
   requestAnimationFrame(step);}
 
-// header + scroll reveals + parallax
+// header + reveals + parallax
 var hd=document.getElementById('hd'),hcopy=document.getElementById('hcopy'),himg=document.getElementById('himg');
-// re-animate every time an element enters view (scroll up OR down), so the page always feels alive
 var io=new IntersectionObserver(function(es){es.forEach(function(e){
   if(!e.isIntersecting)return;
   e.target.classList.add('vis');
   if(e.target.classList.contains('stats'))e.target.querySelectorAll('.ct').forEach(countUp);
-  io.unobserve(e.target);   // reveal once, then leave it be, calmer and more premium
-})},{threshold:.14,rootMargin:'0px 0px -12%'});
-document.querySelectorAll('.sr,.sx,.ey,h2,.qrow h3,.stats,.step,.f').forEach(function(e){io.observe(e)});
+  io.unobserve(e.target);
+})},{threshold:.12,rootMargin:'0px 0px -10%'});
+document.querySelectorAll('.sr,.sx,.sy,.ey,h2,.qrow h3,.stats,.step').forEach(function(e){io.observe(e)});
 var kb=document.getElementById('kb');
 addEventListener('scroll',function(){var s=scrollY;hd.classList.toggle('stuck',s>40);
-  if(kb){var r=kb.getBoundingClientRect();kb.style.transform='translateX('+(-(innerHeight-r.top)*.14)+'px)';}
-  if(s<innerHeight&&!reduce){hcopy.style.transform='translateY('+s*.24+'px)';hcopy.style.opacity=Math.max(0,1-s/(innerHeight*.72));himg.style.transform='translateY('+s*.14+'px) scale(1.04)';}
-  // parallax the work images as they pass through view
-  if(!reduce)document.querySelectorAll('.f img').forEach(function(im){var r=im.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){var d=(r.top+r.height/2-innerHeight/2)/innerHeight;im.style.transform='translateY('+(d*-30)+'px) scale(1.12)';}});
+  if(kb){var r=kb.getBoundingClientRect();kb.style.transform='translateX('+(-(innerHeight-r.top)*.13)+'px)';}
+  if(s<innerHeight&&!reduce){hcopy.style.transform='translateY('+s*.22+'px)';hcopy.style.opacity=Math.max(0,1-s/(innerHeight*.75));himg.style.transform='translateY('+s*.13+'px) scale(1.04)';}
+  if(!reduce)document.querySelectorAll('.piece .ph img').forEach(function(im){var r=im.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){var d=(r.top+r.height/2-innerHeight/2)/innerHeight;im.style.objectPosition='center '+(50+d*12)+'%';}});
   },{passive:true});
-
 </script>
 </body></html>
