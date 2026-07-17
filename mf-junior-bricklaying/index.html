@@ -62,7 +62,7 @@ header.stuck{background:rgba(10,10,11,.7);backdrop-filter:blur(18px);border-bott
 .nav a:after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;background:var(--brush);transition:width .3s}
 .nav a:hover{color:#fff}.nav a:hover:after{width:100%}
 .cta{display:inline-flex;align-items:center;gap:10px;background:var(--brush);color:#0A0A0B;font-weight:700;font-size:13.5px;
-  padding:13px 24px;border-radius:100px;transition:transform .25s ease,background .25s ease}
+  padding:13px 24px;border-radius:100px;white-space:nowrap;transition:transform .25s ease,background .25s ease}
 .cta:hover{transform:translateY(-2px);background:#B65E30}
 .cta svg{width:14px;height:14px}
 
@@ -168,6 +168,10 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:32px 0}
 
 @media(max-width:860px){
   .nav{display:none}
+  .hb{gap:12px}
+  .brush{white-space:nowrap;font-size:17px}
+  .hb .cta{padding:10px 15px;font-size:12px;gap:7px}
+  .hb .cta svg{width:12px;height:12px}
   .a,.b,.c,.d,.e{grid-column:span 12}.a,.b{aspect-ratio:4/3}
   .qrow{grid-template-columns:1fr;gap:8px}.qn{font-size:22px}
 }

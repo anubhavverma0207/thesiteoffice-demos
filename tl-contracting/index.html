@@ -69,7 +69,7 @@ header.stuck{background:rgba(11,13,10,.72);backdrop-filter:blur(20px);border-bot
 .nav a:after{content:"";position:absolute;left:0;bottom:-5px;height:1px;width:0;background:var(--moss);transition:width .3s}
 .nav a:hover{color:#fff}.nav a:hover:after{width:100%}
 .cta{display:inline-flex;align-items:center;gap:10px;background:var(--paper);color:var(--ink);font-weight:700;font-size:13px;
-  letter-spacing:.02em;padding:13px 24px;border-radius:2px;transition:background .25s ease,color .25s ease,transform .25s ease}
+  letter-spacing:.02em;padding:13px 24px;border-radius:2px;white-space:nowrap;transition:background .25s ease,color .25s ease,transform .25s ease}
 .cta:hover{background:var(--moss);color:var(--ink);transform:translateY(-2px)}
 .cta svg{width:14px;height:14px}
 
@@ -270,6 +270,11 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:44px 0 40p
 @media(max-width:900px){
   .nav{display:none}
   .coord{display:none}
+  .hb{gap:12px}
+  .wm{white-space:nowrap;font-size:15px}
+  .wm em{font-size:7.5px;letter-spacing:.26em}
+  .hb .cta{padding:10px 15px;font-size:12px;gap:7px}
+  .hb .cta svg{width:12px;height:12px}
   .piece{grid-template-columns:1fr;gap:14px;align-items:start}
   .piece .no{grid-column:auto}
   .piece .ph{grid-column:auto;order:2!important}
