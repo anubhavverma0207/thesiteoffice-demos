@@ -307,10 +307,13 @@ var hd=document.getElementById('hd'),hcopy=document.getElementById('hcopy'),himg
 var io=new IntersectionObserver(function(es){es.forEach(function(e){
   if(!e.isIntersecting)return;
   e.target.classList.add('vis');
+  // fully-clipped .sx children never intersect on their own (their clip-path zeroes the
+  // visible area in Chromium), so reveal them when their parent block reveals
+  e.target.querySelectorAll('.sx').forEach(function(c){c.classList.add('vis')});
   if(e.target.classList.contains('stats'))e.target.querySelectorAll('.ct').forEach(countUp);
   io.unobserve(e.target);   // reveal once, then leave it be, calmer and more premium
 })},{threshold:.14,rootMargin:'0px 0px -12%'});
-document.querySelectorAll('.sr,.sx,.ey,h2,.qrow h3,.stats,.step,.f').forEach(function(e){io.observe(e)});
+document.querySelectorAll('.sr,.ey,h2,.qrow h3,.stats,.step,.grid').forEach(function(e){io.observe(e)});
 var kb=document.getElementById('kb');
 addEventListener('scroll',function(){var s=scrollY;hd.classList.toggle('stuck',s>40);
   if(kb){var r=kb.getBoundingClientRect();kb.style.transform='translateX('+(-(innerHeight-r.top)*.14)+'px)';}

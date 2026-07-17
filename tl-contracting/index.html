@@ -13,7 +13,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --ink:#0B0D0A; --ink2:#10130E; --card:#151912; --line:rgba(240,240,232,.1); --line2:rgba(240,240,232,.18);
-  --paper:#F0F0E8; --mut:#84887C; --dim:#C8CBBE; --moss:#A9BC6B; --moss2:#5F7038; --mossD:#26301A;
+  --paper:#F0EFE8; --mut:#89857C; --dim:#CBC7BE; --moss:#E08A3F; --moss2:#94551F; --mossD:#33200F;
   --dsp:'Archivo',Impact,sans-serif; --serif:'Fraunces',Georgia,serif;
   --body:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
 }
@@ -85,7 +85,7 @@ header.stuck{background:rgba(11,13,10,.72);backdrop-filter:blur(20px);border-bot
 .peg:before,.peg:after{content:"";position:absolute;background:rgba(240,240,232,.5)}
 .peg:before{left:50%;top:0;bottom:0;width:1px}
 .peg:after{top:50%;left:0;right:0;height:1px}
-.peg i{position:absolute;inset:8px;border:1px solid rgba(169,188,107,.6);border-radius:50%;font-style:normal}
+.peg i{position:absolute;inset:8px;border:1px solid rgba(224,138,63,.6);border-radius:50%;font-style:normal}
 .peg.tl{top:clamp(16px,2.4vw,30px);left:clamp(16px,2.4vw,30px)}
 .peg.tr{top:clamp(16px,2.4vw,30px);right:clamp(16px,2.4vw,30px)}
 .peg.bl{bottom:clamp(16px,2.4vw,30px);left:clamp(16px,2.4vw,30px)}
@@ -141,7 +141,7 @@ h2 .it{font-family:var(--serif);font-weight:300;font-style:italic;text-transform
 .stmt{position:relative;overflow:hidden}
 .topo{position:absolute;right:clamp(-60px,-2vw,0px);top:50%;transform:translateY(-50%);z-index:0;
   width:clamp(340px,46vw,760px);height:auto;pointer-events:none;user-select:none}
-.topo path{fill:none;stroke:rgba(169,188,107,.16);stroke-width:1.2}
+.topo path{fill:none;stroke:rgba(224,138,63,.18);stroke-width:1.2}
 .js .topo.vis path{stroke-dasharray:2400;stroke-dashoffset:2400;animation:drawTopo 5s ease forwards}
 .js .topo.vis path:nth-child(2){animation-delay:.2s}.js .topo.vis path:nth-child(3){animation-delay:.4s}
 .js .topo.vis path:nth-child(4){animation-delay:.6s}.js .topo.vis path:nth-child(5){animation-delay:.8s}
@@ -150,7 +150,7 @@ h2 .it{font-family:var(--serif);font-weight:300;font-style:italic;text-transform
   max-width:27ch;margin-top:34px}
 .bigq em{font-style:italic;color:var(--moss)}
 .sig{display:flex;align-items:center;gap:18px;margin-top:42px}
-.sig .peg2{width:46px;height:46px;border:1px solid var(--moss2);border-radius:4px;position:relative;background:rgba(169,188,107,.06)}
+.sig .peg2{width:46px;height:46px;border:1px solid var(--moss2);border-radius:4px;position:relative;background:rgba(224,138,63,.06)}
 .sig .peg2:before,.sig .peg2:after{content:"";position:absolute;background:var(--moss)}
 .sig .peg2:before{left:50%;top:10px;bottom:10px;width:1px}
 .sig .peg2:after{top:50%;left:10px;right:10px;height:1px}
@@ -187,6 +187,23 @@ h2 .it{font-family:var(--serif);font-weight:300;font-style:italic;text-transform
 .piece:nth-of-type(even) .meta{order:2;text-align:right}
 .piece:nth-of-type(even) .meta p{margin-left:auto}
 .p-tall{aspect-ratio:4/3}.p-wide{aspect-ratio:16/9}.p-sq{aspect-ratio:5/4}
+
+/* real logo badge */
+.sig .lgo{width:52px;height:52px;object-fit:contain;background:#fff;border-radius:10px;padding:5px;border:1px solid var(--moss2)}
+
+/* before / after slider */
+.ba{cursor:ew-resize;touch-action:pan-y;user-select:none}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .aimg{clip-path:inset(0 0 0 var(--x))}
+.ba .knob{position:absolute;top:0;bottom:0;left:var(--x);width:1px;background:rgba(240,239,232,.9);z-index:3;
+  box-shadow:0 0 14px rgba(0,0,0,.5)}
+.ba .knob i{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36px;height:36px;border-radius:50%;
+  background:var(--moss);border:2px solid rgba(240,239,232,.9);font-style:normal}
+.ba .knob i:before{content:"◂ ▸";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:#1a1208;font-weight:700;letter-spacing:1px}
+.bchip{position:absolute;top:12px;z-index:2;font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  padding:6px 11px;border-radius:999px;background:rgba(11,13,10,.62);color:rgba(240,239,232,.92);backdrop-filter:blur(6px)}
+.bchip.l{left:12px}.bchip.r{right:12px}
 
 /* principles */
 .prin{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);
@@ -231,7 +248,7 @@ h2 .it{font-family:var(--serif);font-weight:300;font-style:italic;text-transform
 /* close */
 .close{background:linear-gradient(180deg,var(--ink2),var(--ink));border-top:1px solid var(--line);text-align:center;position:relative;overflow:hidden}
 .close .topo2{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(120vw,1100px);pointer-events:none;user-select:none}
-.close .topo2 path{fill:none;stroke:rgba(169,188,107,.09);stroke-width:1.2}
+.close .topo2 path{fill:none;stroke:rgba(224,138,63,.1);stroke-width:1.2}
 .close .wrap{position:relative;z-index:1}
 .close h2{margin-bottom:22px}
 .close .lede{margin:0 auto 44px}
@@ -296,8 +313,8 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:44px 0 40p
 </div>
 
 <div class="strip"><div class="mq">
-  <span><b>Earthworks</b><i>+</i><b>Excavation</b><i>+</i><b>Driveways</b><i>+</i><b>Drainage</b><i>+</i><b>Landscaping</b><i>+</i><b>Lawns &amp; planting</b><i>+</i></span>
-  <span><b>Earthworks</b><i>+</i><b>Excavation</b><i>+</i><b>Driveways</b><i>+</i><b>Drainage</b><i>+</i><b>Landscaping</b><i>+</i><b>Lawns &amp; planting</b><i>+</i></span>
+  <span><b>Earthworks</b><i>+</i><b>House &amp; shed pads</b><i>+</i><b>Driveways &amp; footpaths</b><i>+</i><b>Trenching &amp; ducting</b><i>+</i><b>Retaining walls</b><i>+</i><b>Fencing</b><i>+</i><b>Topsoil &amp; mulch</b><i>+</i></span>
+  <span><b>Earthworks</b><i>+</i><b>House &amp; shed pads</b><i>+</i><b>Driveways &amp; footpaths</b><i>+</i><b>Trenching &amp; ducting</b><i>+</i><b>Retaining walls</b><i>+</i><b>Fencing</b><i>+</i><b>Topsoil &amp; mulch</b><i>+</i></span>
 </div></div>
 
 <section class="stmt pad" id="ground">
@@ -313,7 +330,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:44px 0 40p
     <h2 class="sr">The lawn gets the credit.<br><span class="it">The groundwork earns it.</span></h2>
     <p class="bigq sr">Good landscaping is <em>ninety percent invisible</em>. The cut, the fill, the falls, the drainage. Get that right and everything planted on top of it stays right.</p>
     <div class="sig sr">
-      <div class="peg2"></div>
+      <img class="lgo" src="img/logo.jpg" alt="T L Contracting logo">
       <div class="who"><b>T L Contracting</b>Local crew · Collie Rd, Te Kowhai</div>
     </div>
     <div class="stats sr">
@@ -328,36 +345,62 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:44px 0 40p
 <section class="work pad" id="work"><div class="wrap">
   <div class="whead">
     <div>
-      <div class="ey sr"><span class="ln"></span><span class="lab">The work</span></div>
+      <div class="ey sr"><span class="ln"></span><span class="lab">The work · Real jobs</span></div>
       <h2 class="sr">From bare dirt <span class="it">to done.</span></h2>
+      <p class="lede sr">These are our actual jobs, not stock photos. Drag the sliders to see the before and after.</p>
     </div>
-    <div class="side sr">Cut · Shape · Drain · Plant</div>
+    <div class="side sr">Cut · Shape · Drain · Finish</div>
   </div>
 
   <div class="piece sr">
     <div class="no">01</div>
-    <div class="ph p-wide sx"><img data-p="0" alt="Earthworks"></div>
-    <div class="meta"><h3>Earthworks</h3><div class="sub2">Cut &amp; fill</div><p>Site cuts, levelling and contouring. The ground shaped to plan before anything goes on it.</p></div>
+    <div class="ph p-wide sx ba" style="--x:50%">
+      <img src="img/clear-before.jpg" alt="Section before clearing">
+      <img class="aimg" src="img/clear-after.jpg" alt="Section after clearing">
+      <span class="bchip l">Before</span><span class="bchip r">After</span>
+      <div class="knob"><i></i></div>
+    </div>
+    <div class="meta"><h3>Section clearing</h3><div class="sub2">Overgrown to usable</div><p>Scrub, stumps and rubbish out, ground levelled and left tidy. A section you can actually use.</p></div>
   </div>
   <div class="piece sr">
     <div class="no">02</div>
-    <div class="ph p-tall sx"><img data-p="1" alt="Excavation"></div>
-    <div class="meta"><h3>Excavation</h3><div class="sub2">Foundations &amp; trenches</div><p>Footings, services and drainage trenches. Dug clean, benched safe, spoil managed.</p></div>
+    <div class="ph p-sq sx ba" style="--x:50%">
+      <img src="img/siteprep-before.jpg" alt="Yard before site prep">
+      <img class="aimg" src="img/siteprep-after.jpg" alt="Yard after site prep">
+      <span class="bchip l">Before</span><span class="bchip r">After</span>
+      <div class="knob"><i></i></div>
+    </div>
+    <div class="meta"><h3>Site prep &amp; levelling</h3><div class="sub2">Ready for lawn</div><p>Rough ground cut, shaped and screeded off ready for topsoil and seed.</p></div>
   </div>
   <div class="piece sr">
     <div class="no">03</div>
-    <div class="ph p-wide sx"><img data-p="2" alt="Driveways"></div>
-    <div class="meta"><h3>Driveways</h3><div class="sub2">Metal &amp; formation</div><p>Formed, compacted and metalled to shed water. Rural driveways that survive winter.</p></div>
+    <div class="ph p-sq sx ba" style="--x:50%">
+      <img src="img/pad-before.jpg" alt="Pad boxed and prepared">
+      <img class="aimg" src="img/pad-after.jpg" alt="Concrete pad poured">
+      <span class="bchip l">Before</span><span class="bchip r">After</span>
+      <div class="knob"><i></i></div>
+    </div>
+    <div class="meta"><h3>Concrete pads</h3><div class="sub2">Boxed, poured, finished</div><p>Patio and shed pads. Dug, boxed and compacted properly, then poured and finished clean.</p></div>
   </div>
   <div class="piece sr">
     <div class="no">04</div>
-    <div class="ph p-sq sx"><img data-p="3" alt="Lawns"></div>
-    <div class="meta"><h3>Lawns</h3><div class="sub2">Topsoil &amp; seed</div><p>Screened topsoil, spread and levelled, then sown. A flat lawn starts under the grass.</p></div>
+    <div class="ph p-tall sx"><img src="img/driveway.jpg" alt="Finished metal driveway"></div>
+    <div class="meta"><h3>Driveways &amp; tracks</h3><div class="sub2">Formed to shed water</div><p>Formed, compacted and metalled. Rural driveways and tracks that survive a Waikato winter.</p></div>
   </div>
   <div class="piece sr">
     <div class="no">05</div>
-    <div class="ph p-wide sx"><img data-p="4" alt="Gardens and planting"></div>
-    <div class="meta"><h3>Gardens &amp; planting</h3><div class="sub2">The finish</div><p>Beds, borders and planting to finish the job properly. The part everyone sees.</p></div>
+    <div class="ph p-tall sx"><img src="img/trench.jpg" alt="Trenching with duct laid"></div>
+    <div class="meta"><h3>Trenching &amp; ducting</h3><div class="sub2">Services underground</div><p>Power, water and comms trenches. Dug clean, ducts bedded right, reinstated after.</p></div>
+  </div>
+  <div class="piece sr">
+    <div class="no">06</div>
+    <div class="ph p-wide sx ba" style="--x:50%">
+      <img src="img/yard-before.jpg" alt="Backyard before">
+      <img class="aimg" src="img/yard-after.jpg" alt="Backyard after">
+      <span class="bchip l">Before</span><span class="bchip r">After</span>
+      <div class="knob"><i></i></div>
+    </div>
+    <div class="meta"><h3>Yard transformations</h3><div class="sub2">The full TLC</div><p>Overgrown backyard stripped, shaped and prepped for its next life. Cleared and carted away.</p></div>
   </div>
 
   <div class="prin sr">
@@ -426,9 +469,25 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:44px 0 40p
 
 <script>
 var hero="https://images.pexels.com/photos/33122153/pexels-photo-33122153.jpeg?auto=compress&cs=tinysrgb&w=1920";
-var photos=["https://images.pexels.com/photos/12164798/pexels-photo-12164798.jpeg?auto=compress&cs=tinysrgb&w=1600","https://images.pexels.com/photos/36657008/pexels-photo-36657008.jpeg?auto=compress&cs=tinysrgb&w=1600","https://images.pexels.com/photos/11496915/pexels-photo-11496915.jpeg?auto=compress&cs=tinysrgb&w=1600","https://images.pexels.com/photos/8143668/pexels-photo-8143668.jpeg?auto=compress&cs=tinysrgb&w=1600","https://images.pexels.com/photos/32666469/pexels-photo-32666469.jpeg?auto=compress&cs=tinysrgb&w=1600"];
 document.getElementById('himg').src=hero;
-document.querySelectorAll('[data-p]').forEach(function(im){im.src=photos[parseInt(im.getAttribute('data-p'),10)%photos.length]});
+
+// before / after sliders: drag anywhere on the image
+document.querySelectorAll('.ba').forEach(function(el){
+  function set(clientX){
+    var r=el.getBoundingClientRect();
+    var x=Math.max(4,Math.min(96,(clientX-r.left)/r.width*100));
+    el.style.setProperty('--x',x+'%');
+  }
+  el.addEventListener('pointerdown',function(e){
+    try{el.setPointerCapture(e.pointerId)}catch(_){}
+    set(e.clientX);
+    function mv(ev){set(ev.clientX)}
+    function upf(){el.removeEventListener('pointermove',mv);el.removeEventListener('pointerup',upf);el.removeEventListener('pointercancel',upf)}
+    el.addEventListener('pointermove',mv);
+    el.addEventListener('pointerup',upf);
+    el.addEventListener('pointercancel',upf);
+  });
+});
 
 var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 
@@ -451,9 +510,12 @@ var hd=document.getElementById('hd'),hcopy=document.getElementById('hcopy'),himg
 var io=new IntersectionObserver(function(es){es.forEach(function(e){
   if(!e.isIntersecting)return;
   e.target.classList.add('vis');
+  // fully-clipped .sx children never intersect on their own (their clip-path zeroes the
+  // visible area in Chromium), so reveal them when their parent block reveals
+  e.target.querySelectorAll('.sx').forEach(function(c){c.classList.add('vis')});
   io.unobserve(e.target);
 })},{threshold:.12,rootMargin:'0px 0px -10%'});
-document.querySelectorAll('.sr,.sx,.ey,h2,.qrow h3,.stats,.step,.topo').forEach(function(e){io.observe(e)});
+document.querySelectorAll('.sr,.ey,h2,.qrow h3,.stats,.step,.topo').forEach(function(e){io.observe(e)});
 var kb=document.getElementById('kb');
 addEventListener('scroll',function(){var s=scrollY;hd.classList.toggle('stuck',s>40);
   if(kb){var r=kb.getBoundingClientRect();kb.style.transform='translateX('+(-(innerHeight-r.top)*.13)+'px)';}
